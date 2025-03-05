@@ -3,6 +3,8 @@ import path from "path";
 
 const filePath = path.join(__dirname, "../data/news.json");
 
+
+
 export interface News {
   slug: string;
   title: string;

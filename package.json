@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-   "dev": "nodemon --ext ts --exec ts-node ./server/app.ts"
+    "dev": "nodemon --ext ts --exec ts-node ./server/app.ts"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,4 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
-  
 }

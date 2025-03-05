@@ -1,12 +1,12 @@
-import express, { Application, Request, Response } from "express";
+import express from "express";
+import routes from "./route/routes"; 
 
-const app: Application = express();
-const PORT: number = 3000;
+const app = express();
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
 
-app.get("/", (req: Request, res: Response): void => {
-  res.send("Hallo, dit is je eerste Express-server met TypeScript!");
-});
+app.use("/", routes); 
 
-app.listen(PORT, () => {
-  console.log(`Server draait op http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server draait op http://localhost:${PORT}`));
+
