@@ -27,6 +27,8 @@ router.get("/news/:slug", (req: Request, res: Response) => {
 });
 
 
+
+
 /*router.post("/news", (req: Request, res: Response) => {
     const { title, content, date } = req.body;
 
