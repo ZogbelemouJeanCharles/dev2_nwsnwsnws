@@ -1,15 +1,17 @@
 import express, { Request, Response } from "express";
 import { getNews, getNewsBySlug, addNews } from "../data/newsService";
 import { title } from "process";
+import { News, getAllNews } from "../services/newsService";
 
 const router = express.Router();
 
 
-router.get("/", (req: Request, res: Response) => {
-    const news = getNews();
-    console.log(news);
-    res.render("index", { title: "Nieuws", news });
-});
+router.get("/news", async (req: Request, res: Response) => {
+    const news: News[] = await getAllNews();
+  
+    res.render("news", { news, title: "Recent nieuws" });
+  });
+  
 
 
 router.get("/news/:slug", (req: Request, res: Response) => {
