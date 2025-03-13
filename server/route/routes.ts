@@ -6,7 +6,7 @@ import { News, getAllNews } from "../services/newsService";
 const router = express.Router();
 
 
-router.get("/news", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
     const news: News[] = await getAllNews();
   
     res.render("news", { news, title: "Recent nieuws" });
